@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <%= form_tag three_phrases_path, method: :get do %>
+    <%= text_field_tag :chars, params[:chars] %>
+    <%= submit_tag '検索' %>
+  <% end %>
+</div>
+
+<div id="new">
+<%= link_to '三字熟語 登録', new_three_phrase_path %>
+</div>
+
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>三字熟語</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @three_phrases.each do |three_phrase| %>
+      <tr>
+        <td><%= three_phrase.to_s %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+<span><%= paginate @three_phrases %></span>
+<span><%= ThreePhrase.count %></span>
+</div>
