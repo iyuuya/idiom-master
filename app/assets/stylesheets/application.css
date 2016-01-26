@@ -18,9 +18,12 @@ footer.footer {
   padding-top: 25px;
   padding-bottom: 25px;
   margin-top: 50px;
-  color: #999999;
-  text-align: center;
-  background-color: #303030;
+  color: #888888;
 
   width: 100%;
+}
+
+.container-fluid.footer {
+  padding-top: 20px;
+  border-top: solid 1px #ddd;
 }
