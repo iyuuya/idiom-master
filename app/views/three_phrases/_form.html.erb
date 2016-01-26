@@ -1,22 +1,22 @@
-<%= form_for(three_phrase) do |f| %>
+<%= form_for(three_phrase, class: "form-horizontal") do |f| %>
   <% if three_phrase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(three_phrase.errors.count, "error") %> prohibited this three_phrase from being saved:</h2>
 
       <ul>
-      <% three_phrase.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% three_phrase.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :value %>
-    <%= f.text_field :value %>
+    <%= f.text_field :value, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '登録', class: "btn btn-default" %>
   </div>
 <% end %>
