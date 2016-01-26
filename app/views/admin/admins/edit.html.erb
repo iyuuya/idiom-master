@@ -1,0 +1,32 @@
+<%= form_for(current_admin, url: admin_admin_path, method: :patch, class: "form-horizontal") do |f| %>
+  <% if current_admin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(current_admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+
+      <ul>
+        <% current_admin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control", readonly: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-default" %>
+  </div>
+<% end %>
