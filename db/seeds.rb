@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-File.read(Rails.root.join('db/fixtures/three_phrases.csv')).lines.map(&:chomp).each do |three_phrase|
-  ThreePhrase.create_from_string(three_phrase)
+if ThreePhrase.count == 0
+  File.read(Rails.root.join('db/fixtures/three_phrases.csv')).lines.map(&:chomp).each do |three_phrase|
+    ThreePhrase.create_from_string(three_phrase)
+  end
+end
+
+if Admin.count == 0
+  Admin.create(
+    email: 'admin@example.com',
+    password: 'hogefuga',
+    password_confirmation: 'hogefuga'
+  )
 end
