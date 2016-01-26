@@ -16,9 +16,21 @@ class ThreePhrase < ApplicationRecord
     end
   end
 
-  scope :from_string, -> (string) {
+  scope :from_string, -> (string, op='or') {
+    op = 'or' if op != 'or' and op != 'and'
     char_ids = Character.where(char: string.chars).ids
-    where('char1_id in (?) or char2_id in (?) or char3_id in (?)', char_ids, char_ids, char_ids)
+    if op == 'or'
+      where("char1_id in (?) or char2_id in (?) or char3_id in (?)", char_ids, char_ids, char_ids)
+    else
+      arel = self.arel_table
+      where(
+        arel[:char1_id].in(char_ids).and(arel[:char2_id].in(char_ids)).or(
+          arel[:char2_id].in(char_ids).and(arel[:char3_id].in(char_ids))
+        ).or(
+          arel[:char1_id].in(char_ids).and(arel[:char3_id].in(char_ids))
+        )
+      )
+    end
   }
 
   def value
