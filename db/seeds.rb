@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 File.read(Rails.root.join('db/fixtures/three_phrases.csv')).lines.map(&:chomp).each do |three_phrase|
-   ThreePhrase.create_from_string(three_phrase)
- end
+  ThreePhrase.create_from_string(three_phrase)
+end
