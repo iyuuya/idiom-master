@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.0'
 # Use Puma as the app server
 gem 'puma'
 
+gem 'rails-i18n', '~> 5.0.0.beta1'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 
 # Use ActiveModel has_secure_password

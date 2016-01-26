@@ -1,0 +1,5 @@
+ja:
+  activerecord:
+    attributes:
+      three_phrase:
+        value: 三字熟語
