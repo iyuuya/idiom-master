@@ -24,7 +24,9 @@
           <a class="navbar-brand" href="/">IdiomMaster</a>
         </div>
         <div id="navbar">
-          <% if content_for? :navbar_right %><%= yield :navbar_right %><% end %>
+          <ul class="nav navbar-nav navbar-left">
+              <li><%= link_to 'Dashboard', admin_dashboard_path %></li>
+          </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
