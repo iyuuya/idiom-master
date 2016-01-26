@@ -12,6 +12,12 @@ if ThreePhrase.count == 0
   end
 end
 
+if FourPhrase.count == 0
+  File.read(Rails.root.join('db/fixtures/four_phrases.csv')).lines.map(&:chomp).each do |four_phrase|
+    FourPhrase.create_from_string(four_phrase)
+  end
+end
+
 if Admin.count == 0
   Admin.create(
     email: 'admin@example.com',
