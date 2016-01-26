@@ -1,11 +1,11 @@
 <% content_for :navbar_right do %>
   <ul class="nav navbar-nav navbar-right">
     <li>
-      <%= link_to '三字熟語 登録', new_three_phrase_path %>
+      <%= link_to '四字熟語 登録', new_four_phrase_path %>
     </li>
   </ul>
 
-  <%= form_tag three_phrases_path, method: :get, class: "navbar-form navbar-right" do %>
+  <%= form_tag four_phrases_path, method: :get, class: "navbar-form navbar-right" do %>
     <div class="form-group">
       <%= text_field_tag :chars, params[:chars], class: "form-control" %>
     </div>
@@ -20,7 +20,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>三字熟語</th>
+      <th>四字熟語</th>
       <% (columns-1).times do %>
         <th></th>
       <% end %>
@@ -28,14 +28,14 @@
   </thead>
 
   <tbody>
-    <% @three_phrases.each_slice(columns) do |three_phrases| %>
+    <% @four_phrases.each_slice(columns) do |four_phrases| %>
       <tr>
-        <% three_phrases.each do |three_phrase| %>
-          <td><span><%= three_phrase.to_s %></td>
+        <% four_phrases.each do |four_phrase| %>
+          <td><span><%= four_phrase.to_s %></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= paginate @three_phrases %>
+<%= paginate @four_phrases %>

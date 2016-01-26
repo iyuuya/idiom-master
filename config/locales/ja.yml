@@ -1,5 +1,10 @@
 ja:
   activerecord:
+    models:
+      three_phrase: 三字熟語
+      four_phrase: 四字熟語
     attributes:
       three_phrase:
         value: 三字熟語
+      four_phrase:
+        value: 四字熟語

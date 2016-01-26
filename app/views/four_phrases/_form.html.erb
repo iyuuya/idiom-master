@@ -1,0 +1,22 @@
+<%= form_for(four_phrase, class: "form-horizontal") do |f| %>
+  <% if four_phrase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(four_phrase.errors.count, "error") %> prohibited this four_phrase from being saved:</h2>
+
+      <ul>
+        <% four_phrase.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :value %>
+    <%= f.text_field :value, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-default" %>
+  </div>
+<% end %>
