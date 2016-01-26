@@ -33,7 +33,7 @@ class ThreePhrasesController < ApplicationController
     @three_phrase = ThreePhrase.create_from_string(three_phrase_params[:value])
 
     respond_to do |format|
-      if @three_phrase.valid?
+      if @three_phrase.save
         format.html { redirect_to three_phrases_path }
       else
         format.html { render :new }
