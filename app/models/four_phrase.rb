@@ -1,0 +1,2 @@
+class FourPhrase < ApplicationRecord
+end

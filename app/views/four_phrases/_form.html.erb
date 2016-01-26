@@ -1,0 +1,37 @@
+<%= form_for(four_phrase) do |f| %>
+  <% if four_phrase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(four_phrase.errors.count, "error") %> prohibited this four_phrase from being saved:</h2>
+
+      <ul>
+      <% four_phrase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :char1_id %>
+    <%= f.number_field :char1_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :char2_id %>
+    <%= f.number_field :char2_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :char3_id %>
+    <%= f.number_field :char3_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :char4_id %>
+    <%= f.number_field :char4_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

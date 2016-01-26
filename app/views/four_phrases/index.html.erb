@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Four Phrases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Char1</th>
+      <th>Char2</th>
+      <th>Char3</th>
+      <th>Char4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @four_phrases.each do |four_phrase| %>
+      <tr>
+        <td><%= four_phrase.char1_id %></td>
+        <td><%= four_phrase.char2_id %></td>
+        <td><%= four_phrase.char3_id %></td>
+        <td><%= four_phrase.char4_id %></td>
+        <td><%= link_to 'Show', four_phrase %></td>
+        <td><%= link_to 'Edit', edit_four_phrase_path(four_phrase) %></td>
+        <td><%= link_to 'Destroy', four_phrase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Four Phrase', new_four_phrase_path %>
