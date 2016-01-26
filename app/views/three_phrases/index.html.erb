@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @three_phrases.each_cons(columns) do |three_phrases| %>
+    <% @three_phrases.each_slice(columns) do |three_phrases| %>
       <tr>
         <% three_phrases.each do |three_phrase| %>
           <td><span><%= three_phrase.to_s %></td>
