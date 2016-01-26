@@ -5,7 +5,7 @@ class ThreePhrasesController < ApplicationController
   # GET /three_phrases.json
   def index
     if params[:chars].present?
-      @three_phrases = ThreePhrase.from_string(params[:chars])
+      @three_phrases = ThreePhrase.from_string(params[:chars], params[:op])
     else
       @three_phrases = ThreePhrase.all
     end

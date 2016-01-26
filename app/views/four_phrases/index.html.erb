@@ -8,6 +8,10 @@
   <%= form_tag four_phrases_path, method: :get, class: "navbar-form navbar-right" do %>
     <div class="form-group">
       <%= text_field_tag :chars, params[:chars], class: "form-control", placeholder: '例) 一心' %>
+      <%= radio_button_tag :op, :or, params[:op].nil? || params[:op] == 'or', class: "form-cotrol" %>
+      OR
+      <%= radio_button_tag :op, :and, params[:op] == 'and', class: "form-cotrol" %>
+      AND
     </div>
     <%= submit_tag '検索', class: "btn btn-default" %>
   <% end %>
