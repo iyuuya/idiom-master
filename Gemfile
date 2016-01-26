@@ -36,7 +36,7 @@ gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'ma
 gem 'kaminari-i18n'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
