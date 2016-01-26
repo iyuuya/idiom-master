@@ -10,6 +10,7 @@ class ThreePhrasesController < ApplicationController
       @three_phrases = ThreePhrase.all
     end
     @three_phrases = @three_phrases.order(id: :desc).page(params[:page])
+    @three_phrase_count = ThreePhrase.count
   end
 
   # GET /three_phrases/1
