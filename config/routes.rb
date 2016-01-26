@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     delete 'logout' => 'sessions#destroy'
 
     get 'dashboard' => 'dashboard#index'
+
+    resource :admin, only: [:edit, :update]
   end
   get '/admin' => redirect('/admin/dashboard')
 end
