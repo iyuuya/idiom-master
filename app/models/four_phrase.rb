@@ -21,7 +21,7 @@ class FourPhrase < ApplicationRecord
 
   def to_s
     begin
-      char1.char + char2.char + char3.char
+      char1.char + char2.char + char3.char + char4.char
     rescue => e
       ''
     end
