@@ -33,6 +33,7 @@ gem 'puma'
 
 gem 'rails-i18n', '~> 5.0.0.beta1'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+gem 'kaminari-i18n'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
