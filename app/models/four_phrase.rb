@@ -33,10 +33,10 @@ class FourPhrase < ApplicationRecord
       if string.size == 4
         transaction do
           begin
-            four_phrase.char1 = Character.find_or_create_by(char: string[0])
-            four_phrase.char2 = Character.find_or_create_by(char: string[1])
-            four_phrase.char3 = Character.find_or_create_by(char: string[2])
-            four_phrase.char4 = Character.find_or_create_by(char: string[3])
+            four_phrase.char1 = Character.find_or_create_by!(char: string[0])
+            four_phrase.char2 = Character.find_or_create_by!(char: string[1])
+            four_phrase.char3 = Character.find_or_create_by!(char: string[2])
+            four_phrase.char4 = Character.find_or_create_by!(char: string[3])
             four_phrase.save!
           rescue => e
           end

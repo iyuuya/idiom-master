@@ -31,9 +31,9 @@ class ThreePhrase < ApplicationRecord
       if string.size == 3
         transaction do
           begin
-            three_phrase.char1 = Character.find_or_create_by(char: string[0])
-            three_phrase.char2 = Character.find_or_create_by(char: string[1])
-            three_phrase.char3 = Character.find_or_create_by(char: string[2])
+            three_phrase.char1 = Character.find_or_create_by!(char: string[0])
+            three_phrase.char2 = Character.find_or_create_by!(char: string[1])
+            three_phrase.char3 = Character.find_or_create_by!(char: string[2])
             three_phrase.save!
           rescue => e
           end
