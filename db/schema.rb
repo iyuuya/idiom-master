@@ -11,11 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125073850) do
+ActiveRecord::Schema.define(version: 20160126064322) do
 
   create_table "characters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "char", null: false
     t.index ["char"], name: "index_characters_on_char", using: :btree
+  end
+
+  create_table "four_phrases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "char1_id"
+    t.integer "char2_id"
+    t.integer "char3_id"
+    t.integer "char4_id"
+    t.index ["char1_id", "char2_id", "char3_id", "char4_id"], name: "index_for_phrases_on_char_ids", unique: true, using: :btree
+    t.index ["char1_id"], name: "index_four_phrases_on_char1_id", using: :btree
+    t.index ["char2_id"], name: "index_four_phrases_on_char2_id", using: :btree
+    t.index ["char3_id"], name: "index_four_phrases_on_char3_id", using: :btree
+    t.index ["char4_id"], name: "index_four_phrases_on_char4_id", using: :btree
   end
 
   create_table "three_phrases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
