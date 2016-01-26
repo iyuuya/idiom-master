@@ -27,6 +27,10 @@ class Admin::ThreePhrasesController < Admin::BaseController
     end
   end
 
+  def download
+    send_data ThreePhrase.all.map(&:to_s).sort.join("\n"), type: 'text/csv; charset=utf-8', filename: 'three_phrases.csv'
+  end
+
   private
 
   def set_three_phrase
