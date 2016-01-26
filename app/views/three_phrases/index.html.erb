@@ -1,3 +1,18 @@
+<% content_for :navbar_right do %>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <%= link_to '三字熟語 登録', new_three_phrase_path %>
+    </li>
+  </ul>
+
+  <%= form_tag three_phrases_path, method: :get, class: "navbar-form navbar-right" do %>
+    <div class="form-group">
+      <%= text_field_tag :chars, params[:chars], class: "form-control" %>
+    </div>
+    <%= submit_tag '検索', class: "btn btn-default" %>
+  <% end %>
+<% end %>
+
 <% columns = 5 %>
 
 <p id="notice"><%= notice %></p>

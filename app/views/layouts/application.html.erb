@@ -24,18 +24,12 @@
           <a class="navbar-brand" href="/">IdiomMaster</a>
         </div>
         <div id="navbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-            <%= link_to '三字熟語 登録', new_three_phrase_path %>
-            </li>
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to t('activerecord.models.three_phrase'), three_phrases_path %></li>
+            <li><%= link_to t('activerecord.models.four_phrase'),  four_phrases_path %></li>
           </ul>
 
-          <%= form_tag three_phrases_path, method: :get, class: "navbar-form navbar-right" do %>
-            <div class="form-group">
-              <%= text_field_tag :chars, params[:chars], class: "form-control" %>
-            </div>
-            <%= submit_tag '検索', class: "btn btn-default" %>
-          <% end %>
+          <% if content_for? :navbar_right %><%= yield :navbar_right %><% end %>
         </div>
       </div>
     </nav>
