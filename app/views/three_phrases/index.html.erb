@@ -7,7 +7,7 @@
 
   <%= form_tag three_phrases_path, method: :get, class: "navbar-form navbar-right" do %>
     <div class="form-group">
-      <%= text_field_tag :chars, params[:chars], class: "form-control" %>
+      <%= text_field_tag :chars, params[:chars], class: "form-control", placeholder: '例) 一人' %>
     </div>
     <%= submit_tag '検索', class: "btn btn-default" %>
   <% end %>
