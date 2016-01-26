@@ -25,8 +25,8 @@
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav navbar-left">
-            <li><%= link_to t('activerecord.models.three_phrase'), three_phrases_path %></li>
-            <li><%= link_to t('activerecord.models.four_phrase'),  four_phrases_path %></li>
+            <li class="<%= active?('three_phrases') ? 'active' : '' %>"><%= link_to t('activerecord.models.three_phrase'), three_phrases_path %></li>
+            <li class="<%= active?('four_phrases')  ? 'active' : '' %>"><%= link_to t('activerecord.models.four_phrase'),  four_phrases_path %></li>
           </ul>
 
           <% if content_for? :navbar_right %><%= yield :navbar_right %><% end %>
