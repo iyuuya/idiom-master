@@ -4,7 +4,13 @@ class FourPhrasesController < ApplicationController
   # GET /four_phrases
   # GET /four_phrases.json
   def index
-    @four_phrases = FourPhrase.all
+    if params[:chars].present?
+      @four_phrases = FourPhrase.from_string(params[:chars])
+    else
+      @four_phrases = FourPhrase.all
+    end
+    @four_phrases = @four_phrases.order(id: :desc).page(params[:page])
+    @count = FourPhrase.count
   end
 
   # GET /four_phrases/1
@@ -24,12 +30,11 @@ class FourPhrasesController < ApplicationController
   # POST /four_phrases
   # POST /four_phrases.json
   def create
-    @four_phrase = FourPhrase.new(four_phrase_params)
+    @four_phrase = FourPhrase.create_from_string(four_phrase_params[:value])
 
     respond_to do |format|
-      if @four_phrase.save
-        format.html { redirect_to @four_phrase, notice: 'Four phrase was successfully created.' }
-        format.json { render :show, status: :created, location: @four_phrase }
+      if @four_phrase.valid?
+        format.html { redirect_to four_phrases_path }
       else
         format.html { render :new }
         format.json { render json: @four_phrase.errors, status: :unprocessable_entity }
@@ -69,6 +74,6 @@ class FourPhrasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def four_phrase_params
-      params.require(:four_phrase).permit(:char1_id, :char2_id, :char3_id, :char4_id)
+      params.require(:four_phrase).permit(:value)
     end
 end

@@ -16,7 +16,7 @@ class FourPhrase < ApplicationRecord
 
   scope :from_string, -> (string) {
     char_ids = Character.where(char: string.chars).ids
-    where('char1_id in (?) or char2_id in (?) or char3_id in (?) or char3_id in (?)', char_ids, char_ids, char_ids, char_ids)
+    where('char1_id in (?) or char2_id in (?) or char3_id in (?) or char4_id in (?)', char_ids, char_ids, char_ids, char_ids)
   }
 
   def to_s
