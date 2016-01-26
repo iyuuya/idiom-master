@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>四字熟語</th>
+      <th colspan=2></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @four_phrases.each do |four_phrase| %>
+      <tr>
+        <td><%= four_phrase.to_s %></td>
+        <td><%= link_to 'EDIT', edit_admin_four_phrase_path(four_phrase) %></td>
+        <td><%= link_to 'DEL', admin_four_phrase_path(four_phrase), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @four_phrases %>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resource :admin, only: [:edit, :update]
 
     resources :three_phrases, only: [:index, :edit, :update, :destroy]
+    resources :four_phrases, only: [:index, :edit, :update, :destroy]
   end
   get '/admin' => redirect('/admin/dashboard')
 end
