@@ -4,7 +4,7 @@ class Admin::FourPhrasesController < Admin::BaseController
 
   def index
     @four_phrases = FourPhrase.page(params[:page])
-    @count = FourPharse.count
+    @count = FourPhrase.count
   end
 
   def edit
