@@ -35,7 +35,7 @@
     <% @three_phrases.each_slice(columns) do |three_phrases| %>
       <tr>
         <% three_phrases.each do |three_phrase| %>
-          <td><span><%= three_phrase.to_s %></td>
+          <td><%= three_phrase %></td>
         <% end %>
       </tr>
     <% end %>
