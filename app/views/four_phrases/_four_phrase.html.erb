@@ -1,6 +1,6 @@
 <div class='phrase'>
-<span><%= four_phrase.char1.char %></span>
-<span><%= four_phrase.char2.char %></span>
-<span><%= four_phrase.char3.char %></span>
-<span><%= four_phrase.char4.char %></span>
+  <span class='<%= params[:chars] && params[:chars].include?(four_phrase.char1.char) ? 'active' : '' %>'><%= four_phrase.char1.char %></span>
+  <span class='<%= params[:chars] && params[:chars].include?(four_phrase.char2.char) ? 'active' : '' %>'><%= four_phrase.char2.char %></span>
+  <span class='<%= params[:chars] && params[:chars].include?(four_phrase.char3.char) ? 'active' : '' %>'><%= four_phrase.char3.char %></span>
+  <span class='<%= params[:chars] && params[:chars].include?(four_phrase.char4.char) ? 'active' : '' %>'><%= four_phrase.char4.char %></span>
 </div>

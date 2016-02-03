@@ -1,5 +1,5 @@
 <div class='phrase'>
-<span><%= three_phrase.char1.char %></span>
-<span><%= three_phrase.char2.char %></span>
-<span><%= three_phrase.char3.char %></span>
+  <span class='<%= params[:chars] && params[:chars].include?(three_phrase.char1.char) ? 'active' : '' %>'><%= three_phrase.char1.char %></span>
+  <span class='<%= params[:chars] && params[:chars].include?(three_phrase.char2.char) ? 'active' : '' %>'><%= three_phrase.char2.char %></span>
+  <span class='<%= params[:chars] && params[:chars].include?(three_phrase.char3.char) ? 'active' : '' %>'><%= three_phrase.char3.char %></span>
 </div>

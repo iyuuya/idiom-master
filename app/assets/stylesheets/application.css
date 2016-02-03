@@ -35,3 +35,7 @@ footer.footer {
   padding-left: 0;
   padding-right: 0;
 }
+
+.phrase span.active {
+  background-color: #dff0d8;
+}
