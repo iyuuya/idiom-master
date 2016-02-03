@@ -35,7 +35,7 @@
     <% @three_phrases.each_slice(columns) do |three_phrases| %>
       <tr>
         <% three_phrases.each do |three_phrase| %>
-          <td><%= three_phrase %></td>
+          <td><%= render partial: 'three_phrase', locals: { three_phrase: three_phrase } %></td>
         <% end %>
       </tr>
     <% end %>
