@@ -13,6 +13,6 @@ module IdiomMaster
     # -- all .rb files in that directory are automatically loaded.
 
     config.i18n.default_locale = :ja
-    config.i18n.available_locales = :ja
+    config.i18n.available_locales = %i(ja)
   end
 end
