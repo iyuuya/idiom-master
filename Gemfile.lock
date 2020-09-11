@@ -101,7 +101,7 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.3)
+    json (1.8.6)
     kaminari-i18n (0.3.2)
       kaminari
       rails
@@ -132,8 +132,7 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     puma (2.16.0)
-    rack (2.0.0.alpha)
-      json
+    rack (2.2.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.beta2)
